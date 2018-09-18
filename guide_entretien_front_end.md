@@ -3,6 +3,8 @@
 ## Général
 
 - Quel est ton langage préféré et pourquoi ?
+- Pourquoi plutôt du front que du back ?
+- Appétence pour le design ? Quels sont les softs utilisés ?
 - Quelle est la différence entre langage compilé et langage interprété ?
 - Qu'est-ce qu'un design pattern ? <i>exemple</i>
 - Peux-tu citer un gestionnaire de versions ?
@@ -26,18 +28,17 @@
 
 - Quelle librairie externe as-tu utilisée ? (yarn / npm)
 
-- Quelle est la différence entre
-    `=` -  `==` - `===`
+- Quelle est la différence entre `=`,  `==` et `===`
 
-- Quelle est la différence entre
-    `var` `let` et `const`
+- Quelle est la différence entre `var` `let` et `const`
 
-- Quelle est la valeur de x :
-    `const x = 1 + ‘3’`
+- Quelle est la valeur de x : `const x = 1 + ‘3’`
 
 - Qu'est-ce qu'une `Promise` et à quoi ça sert ?
 
 - Qu'est-ce qu'un `Observable` et à quoi ça sert ?
+
+- Si `Observable`, quelle est la différence entre un `Subject`, `ReplySubject` et `BehaviorSubject`
 
 - Quelle est la différence entre:
 
@@ -53,7 +54,7 @@
     ```
     (function(x) {
         return !!x;
-	})(‘a’);
+	})('a');
 
 - Que retourne la fonction suivante
     ```
@@ -65,7 +66,7 @@
         return foo;
     })();
 
-### Exercice
+### Exercice 1
 
 Voici une liste de résultats pour des étudiants.
 Nous voulons pouvoir afficher la moyenne des 5 meilleurs notes pour un étudiant
@@ -102,3 +103,14 @@ function calculateAverage(id) {
 ```
 qui retournera la moyenne des 5 meilleures notes pour l'id de l'eleve.
 
+### Exercice 2
+
+Si nous avons l'observable `closed$` défini par :
+
+```
+  private closedSource: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  closed$: Observable<boolean> = this.keyboardClosedSource.asObservable();
+```
+
+- Ecrire l'observable `opened$` qui sera toujours l'inverse de `closed$`
+- Comment pourrait-on faire passer `opened$` de `true` à `false` de façon cyclique ? 
